@@ -1,0 +1,9 @@
+{
+  "name":"ANEMART Student Accommodation",
+  "short_name":"ANEMART",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#0d3b66",
+  "theme_color":"#0d3b66",
+  "description":"Find student boarding houses near Ten Miles Lusaka Campus."
+}

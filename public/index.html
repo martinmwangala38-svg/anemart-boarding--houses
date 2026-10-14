@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d3b66"><meta name="description" content="Find student boarding houses near Ten Miles Lusaka Campus with ANEMART.">
+<title>ANEMART | Student Boarding Houses</title><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="offlineBanner" class="offline" hidden>📴 You are offline — cached pages may be shown. Live availability and submissions need a connection.</div>
+<header class="site-header"><div class="container header-inner">
+<a class="logo" href="#home" aria-label="ANEMART home">ANE<span>MART</span></a>
+<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+<nav id="mainNav"><a href="#home">Home</a><a href="#listings">Listings</a><a href="#apply">Apply</a><a href="#payment">Payment</a><a href="#contact">Contact</a><a href="/admin">Admin</a></nav>
+</div></header>
+<main>
+<section id="home" class="hero"><div class="container hero-content">
+<span class="badge">🎓 For Ten Miles Lusaka Campus Students</span><h1>Find your next student room.</h1>
+<p>Browse boarding houses near campus, request a bedspace and follow up securely with ANEMART.</p>
+<div class="hero-actions"><a class="btn" href="#listings">Browse rooms</a><a class="btn btn-outline" href="#apply">Request a room</a></div>
+<p class="hero-note">One-time agent fee: <strong id="heroFee">K100</strong>. Always confirm room availability and payment details with ANEMART.</p>
+</div></section>
+<section class="section"><div class="container"><div class="section-heading"><h2>Why ANEMART?</h2><p>Clear information and a simpler way to find accommodation.</p></div>
+<div class="features"><article class="feature"><span>✓</span><h3>Reviewed listings</h3><p>Listings are managed by the ANEMART team. Visit and verify a room before making housing commitments.</p></article>
+<article class="feature"><span>⚡</span><h3>Simple applications</h3><p>Tell us your needs and keep the reference number for follow-up.</p></article>
+<article class="feature"><span>🔐</span><h3>Protected contacts</h3><p>Landlord contact details are only returned by the server after payment verification.</p></article></div></div></section>
+<section id="listings" class="section soft"><div class="container"><div class="section-heading"><h2>Boarding houses</h2><p>Search by property, area, room type or budget.</p></div>
+<div class="filters"><label>Search<input id="searchInput" type="search" placeholder="e.g. Twist Apartment"></label><label>Room type<select id="typeFilter"><option value="all">All types</option><option value="single">Single</option><option value="shared">Shared</option><option value="ensuite">Ensuite</option></select></label><label>Minimum price (K)<input id="minPrice" type="number" min="0" placeholder="0"></label><label>Maximum price (K)<input id="maxPrice" type="number" min="0" placeholder="No limit"></label><button class="btn btn-small" id="clearFilters">Clear filters</button></div>
+<p id="resultsCount" class="muted" aria-live="polite">Loading listings…</p><div id="listingsGrid" class="listing-grid"></div><p id="listingError" class="notice" hidden></p></div></section>
+<section id="apply" class="section"><div class="container"><div class="section-heading"><h2>Request a room</h2><p>Submit your preferences. We will provide a reference number for follow-up.</p></div>
+<form id="applicationForm" class="form-card"><div class="form-grid">
+<label>Full name *<input name="full_name" required minlength="2" maxlength="120" autocomplete="name"></label>
+<label>Phone number *<input name="phone" required type="tel" minlength="9" maxlength="40" autocomplete="tel" placeholder="e.g. 097xxxxxxx"></label>
+<label>Email (optional)<input name="email" type="email" maxlength="180" autocomplete="email"></label>
+<label>Preferred area<input name="preferred_area" maxlength="180" placeholder="Near Ten Miles Campus"></label>
+<label>Room type<select name="room_type"><option value="any">Any suitable room</option><option value="single">Single</option><option value="shared">Shared</option><option value="ensuite">Ensuite</option></select></label>
+<label>Specific listing (optional)<select name="listing_id" id="applicationListing"><option value="">Help me find a room</option></select></label>
+<label class="full">Additional notes<textarea name="message" maxlength="1000" rows="4" placeholder="Budget, move-in date or other preferences"></textarea></label>
+</div><p class="small muted">Only provide information needed to help us find accommodation. Do not enter payment PINs or passwords.</p><button class="btn" type="submit">Submit application</button><p id="applicationResult" class="notice" hidden aria-live="polite"></p></form></div></section>
+<section id="payment" class="section soft"><div class="container"><div class="section-heading"><h2>Agent fee and payment</h2><p>Current configured one-time agent fee: <strong id="feeAmount">K100</strong>.</p></div>
+<div class="payment-grid"><article class="payment-card"><span class="payment-mark airtel">Airtel Money</span><h3>Pay using Airtel Money</h3><p>Recipient: <strong id="airtelName">ANEMART</strong></p><p>Number: <strong id="airtelNumber">Confirm with ANEMART</strong></p><p class="small muted">Confirm the recipient and amount directly with ANEMART before sending money. Never share your PIN.</p></article>
+<article class="payment-card"><span class="payment-mark mtn">MTN MoMo</span><h3>Pay using MTN MoMo</h3><p>Recipient: <strong id="mtnName">ANEMART</strong></p><p>Number: <strong id="mtnNumber">Confirm with ANEMART</strong></p><p class="small muted">Keep the transaction reference. A submitted reference is not proof of payment by itself.</p></article></div>
+<form id="paymentForm" class="form-card payment-submit"><h3>Submit payment for verification</h3><div class="form-grid">
+<label>Application reference *<input name="application_reference" required placeholder="ANE-XXXXXXXX"></label>
+<label>Payment method *<select name="payment_method" required><option value="">Choose method</option><option>Airtel Money</option><option>MTN MoMo</option></select></label>
+<label class="full">Transaction reference *<input name="payment_reference" required maxlength="100" placeholder="Reference from your payment confirmation"></label>
+</div><button class="btn" type="submit">Submit for verification</button><p id="paymentResult" class="notice" hidden aria-live="polite"></p></form>
+<div class="notice warning"><strong>Important:</strong> payments are verified manually by an administrator in this version. Do not pay a personal number unless ANEMART has confirmed it through an official channel. Landlord contacts stay locked until verification.</div></div></section>
+<section id="contact" class="section"><div class="container"><div class="section-heading"><h2>Contact ANEMART</h2><p>Ask questions about a listing or your application.</p></div><div class="contact-grid">
+<article class="contact-card"><h3>Anenyasha</h3><p>WhatsApp support</p><a class="btn btn-small wa-link" data-contact="Anenyasha" href="#" hidden>Chat on WhatsApp</a><p class="muted small" data-missing="Anenyasha">WhatsApp number not configured yet.</p></article>
+<article class="contact-card"><h3>Martin</h3><p>WhatsApp support</p><a class="btn btn-small wa-link" data-contact="Martin" href="#" hidden>Chat on WhatsApp</a><p class="muted small" data-missing="Martin">WhatsApp number not configured yet.</p></article></div>
+<p class="small muted">Please verify property details, fees and availability before making decisions.</p></div></section>
+</main>
+<footer class="footer"><div class="container footer-inner"><a class="logo" href="#home">ANE<span>MART</span></a><p>Student accommodation near Ten Miles Lusaka Campus.</p><p>© <span id="year"></span> ANEMART</p><a href="/admin">Administrator</a></div></footer>
+<div class="whatsapp-float" id="whatsappFloat" hidden><button id="whatsappToggle" aria-label="Open WhatsApp contacts">✆</button><div id="whatsappChoices" hidden><a class="wa-link" data-contact="Anenyasha" href="#" hidden>Anenyasha</a><a class="wa-link" data-contact="Martin" href="#" hidden>Martin</a></div></div>
+<script src="/app.js" defer></script>
+</body></html>
